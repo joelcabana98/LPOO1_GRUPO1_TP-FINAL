@@ -1,0 +1,81 @@
+R:\FACULTAD\1_2020\Laboratorio de Programacion Orientada a Objetos\Trabajo Practicos\LPOOI_GRUPO1\Vistas\bin\Debug\Vistas.exe
+R:\FACULTAD\1_2020\Laboratorio de Programacion Orientada a Objetos\Trabajo Practicos\LPOOI_GRUPO1\Vistas\bin\Debug\Vistas.pdb
+R:\FACULTAD\1_2020\Laboratorio de Programacion Orientada a Objetos\Trabajo Practicos\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.Properties.Resources.resources
+R:\FACULTAD\1_2020\Laboratorio de Programacion Orientada a Objetos\Trabajo Practicos\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.csproj.GenerateResource.Cache
+R:\FACULTAD\1_2020\Laboratorio de Programacion Orientada a Objetos\Trabajo Practicos\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.exe
+R:\FACULTAD\1_2020\Laboratorio de Programacion Orientada a Objetos\Trabajo Practicos\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.pdb
+R:\FACULTAD\1_2020\Laboratorio de Programacion Orientada a Objetos\Trabajo Practicos\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormPrincipal.resources
+R:\FACULTAD\1_2020\Laboratorio de Programacion Orientada a Objetos\Trabajo Practicos\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormClientes.resources
+R:\FACULTAD\1_2020\Laboratorio de Programacion Orientada a Objetos\Trabajo Practicos\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormVehiculos.resources
+R:\FACULTAD\1_2020\Laboratorio de Programacion Orientada a Objetos\Trabajo Practicos\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormModalAgregarCliente.resources
+R:\FACULTAD\1_2020\Laboratorio de Programacion Orientada a Objetos\Trabajo Practicos\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormModalAgregarVehiculo.resources
+R:\FACULTAD\1_2020\Laboratorio de Programacion Orientada a Objetos\Trabajo Practicos\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormLogin.resources
+R:\FACULTAD\1_2020\Laboratorio de Programacion Orientada a Objetos\Trabajo Practicos\LPOOI_GRUPO1\Vistas\bin\Debug\ClasesBase.dll
+R:\FACULTAD\1_2020\Laboratorio de Programacion Orientada a Objetos\Trabajo Practicos\LPOOI_GRUPO1\Vistas\bin\Debug\ClasesBase.pdb
+R:\FACULTAD\1_2020\Laboratorio de Programacion Orientada a Objetos\Trabajo Practicos\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.csprojResolveAssemblyReference.cache
+R:\FACULTAD\1_2020\Laboratorio de Programacion Orientada a Objetos\Trabajo Practicos\LPOOI_GRUPO1\Vistas\bin\Debug\Vistas.exe.config
+R:\FACULTAD\1_2020\Laboratorio de Programacion Orientada a Objetos\Trabajo Practicos\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormUsuarios.resources
+R:\FACULTAD\1_2020\Laboratorio de Programacion Orientada a Objetos\Trabajo Practicos\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormModalAgregarUsuario.resources
+R:\FACULTAD\1_2020\Laboratorio de Programacion Orientada a Objetos\Trabajo Practicos\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormModalModificarUsuario.resources
+R:\FACULTAD\1_2020\Laboratorio de Programacion Orientada a Objetos\Trabajo Practicos\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormModalModificarCliente.resources
+R:\FACULTAD\1_2020\Laboratorio de Programacion Orientada a Objetos\Trabajo Practicos\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormVentas.resources
+R:\FACULTAD\1_2020\Laboratorio de Programacion Orientada a Objetos\Trabajo Practicos\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormModalAgregarVenta.resources
+R:\FACULTAD\1_2020\Laboratorio de Programacion Orientada a Objetos\Trabajo Practicos\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormModalModificarVehiculo.resources
+C:\Users\Joel\Desktop\LPOOI_GRUPO1\Vistas\bin\Debug\Vistas.exe.config
+C:\Users\Joel\Desktop\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.exe
+C:\Users\Joel\Desktop\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.pdb
+C:\Users\Joel\Desktop\LPOOI_GRUPO1\Vistas\bin\Debug\Vistas.exe
+C:\Users\Joel\Desktop\LPOOI_GRUPO1\Vistas\bin\Debug\Vistas.pdb
+C:\Users\Joel\Desktop\LPOOI_GRUPO1\Vistas\bin\Debug\ClasesBase.dll
+C:\Users\Joel\Desktop\LPOOI_GRUPO1\Vistas\bin\Debug\ClasesBase.pdb
+C:\Users\Joel\Desktop\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.csprojResolveAssemblyReference.cache
+C:\Users\Joel\Desktop\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormClientes.resources
+C:\Users\Joel\Desktop\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormLogin.resources
+C:\Users\Joel\Desktop\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormModalAgregarCliente.resources
+C:\Users\Joel\Desktop\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormModalAgregarUsuario.resources
+C:\Users\Joel\Desktop\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormModalAgregarVehiculo.resources
+C:\Users\Joel\Desktop\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormModalAgregarVenta.resources
+C:\Users\Joel\Desktop\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormModalModificarCliente.resources
+C:\Users\Joel\Desktop\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormModalModificarUsuario.resources
+C:\Users\Joel\Desktop\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormModalModificarVehiculo.resources
+C:\Users\Joel\Desktop\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormPrincipal.resources
+C:\Users\Joel\Desktop\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormUsuarios.resources
+C:\Users\Joel\Desktop\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormVehiculos.resources
+C:\Users\Joel\Desktop\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormVentas.resources
+C:\Users\Joel\Desktop\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.Properties.Resources.resources
+C:\Users\Joel\Desktop\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.csproj.GenerateResource.Cache
+C:\Users\Joel\Desktop\LPOOI_GRUPO1\Vistas\bin\Debug\Vistas.exe.manifest
+C:\Users\Joel\Desktop\LPOOI_GRUPO1\Vistas\bin\Debug\Vistas.application
+C:\Users\Joel\Desktop\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.exe.manifest
+C:\Users\Joel\Desktop\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.application
+C:\Users\Joel\Desktop\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormGestionFormaPago.resources
+C:\Users\Joel\Desktop\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormGestionClaseYTipoVehiculo.resources
+C:\Users\Joel\Desktop\Nueva carpeta (2)\LPOOI_GRUPO1\Vistas\bin\Debug\Vistas.exe.config
+C:\Users\Joel\Desktop\Nueva carpeta (2)\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.exe
+C:\Users\Joel\Desktop\Nueva carpeta (2)\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.pdb
+C:\Users\Joel\Desktop\Nueva carpeta (2)\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.csprojResolveAssemblyReference.cache
+C:\Users\Joel\Desktop\Nueva carpeta (2)\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormGestionClaseYTipoVehiculo.resources
+C:\Users\Joel\Desktop\Nueva carpeta (2)\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormClientes.resources
+C:\Users\Joel\Desktop\Nueva carpeta (2)\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormGestionFormaPago.resources
+C:\Users\Joel\Desktop\Nueva carpeta (2)\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormLogin.resources
+C:\Users\Joel\Desktop\Nueva carpeta (2)\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormModalAgregarCliente.resources
+C:\Users\Joel\Desktop\Nueva carpeta (2)\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormModalAgregarUsuario.resources
+C:\Users\Joel\Desktop\Nueva carpeta (2)\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormModalAgregarVehiculo.resources
+C:\Users\Joel\Desktop\Nueva carpeta (2)\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormModalAgregarVenta.resources
+C:\Users\Joel\Desktop\Nueva carpeta (2)\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormModalModificarCliente.resources
+C:\Users\Joel\Desktop\Nueva carpeta (2)\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormModalModificarUsuario.resources
+C:\Users\Joel\Desktop\Nueva carpeta (2)\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormModalModificarVehiculo.resources
+C:\Users\Joel\Desktop\Nueva carpeta (2)\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormPrincipal.resources
+C:\Users\Joel\Desktop\Nueva carpeta (2)\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormUsuarios.resources
+C:\Users\Joel\Desktop\Nueva carpeta (2)\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormVehiculos.resources
+C:\Users\Joel\Desktop\Nueva carpeta (2)\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.FormVentas.resources
+C:\Users\Joel\Desktop\Nueva carpeta (2)\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.Properties.Resources.resources
+C:\Users\Joel\Desktop\Nueva carpeta (2)\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.csproj.GenerateResource.Cache
+C:\Users\Joel\Desktop\Nueva carpeta (2)\LPOOI_GRUPO1\Vistas\bin\Debug\Vistas.exe.manifest
+C:\Users\Joel\Desktop\Nueva carpeta (2)\LPOOI_GRUPO1\Vistas\bin\Debug\Vistas.application
+C:\Users\Joel\Desktop\Nueva carpeta (2)\LPOOI_GRUPO1\Vistas\bin\Debug\Vistas.exe
+C:\Users\Joel\Desktop\Nueva carpeta (2)\LPOOI_GRUPO1\Vistas\bin\Debug\Vistas.pdb
+C:\Users\Joel\Desktop\Nueva carpeta (2)\LPOOI_GRUPO1\Vistas\bin\Debug\ClasesBase.dll
+C:\Users\Joel\Desktop\Nueva carpeta (2)\LPOOI_GRUPO1\Vistas\bin\Debug\ClasesBase.pdb
+C:\Users\Joel\Desktop\Nueva carpeta (2)\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.exe.manifest
+C:\Users\Joel\Desktop\Nueva carpeta (2)\LPOOI_GRUPO1\Vistas\obj\x86\Debug\Vistas.application
