@@ -69,6 +69,7 @@
     <Compile Include="TrabajarVenta.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="UsuarioLogin.cs" />
+    <Compile Include="Util.cs" />
     <Compile Include="Vehiculo.cs" />
     <Compile Include="Venta.cs" />
   </ItemGroup>

@@ -37,6 +37,7 @@ namespace Vistas
             cmbCliente.DisplayMember = "cli_detalle";
             cmbCliente.ValueMember = "cli_dni";
             cmbCliente.DataSource = TrabajarCliente.listar_Clientes_sa();
+            cmbCliente.SelectedIndex = -1;
 
         }
 
@@ -48,6 +49,7 @@ namespace Vistas
             cmbVehiculo.DisplayMember = "veh_detalle";
             cmbVehiculo.ValueMember = "Matricula";
             cmbVehiculo.DataSource = TrabajarVehiculo.listar_Vehiculo();
+            cmbVehiculo.SelectedIndex = -1; 
 
         }
 
@@ -59,6 +61,8 @@ namespace Vistas
             cmbFormaPago.DisplayMember = "Descripcion";
             cmbFormaPago.ValueMember = "Id";
             cmbFormaPago.DataSource = TrabajarVenta.listar_forma_pago();
+            cmbFormaPago.SelectedIndex = -1;
+            cmbFormaPago.Text = "--Seleccione Forma de Pago";
         }
 
 
@@ -80,7 +84,6 @@ namespace Vistas
             String matricula = Convert.ToString(cmbVehiculo.SelectedValue);
             //busca el precio del vehiculo seleccionado y lo muestra en el campo Precio Final
             txtPrecioFinal.Text = Convert.ToString(TrabajarVehiculo.precioDeVehiculoSP(matricula));
-           
         }
 
 
@@ -92,17 +95,25 @@ namespace Vistas
         private void btnAgregar_Click(object sender, EventArgs e)
         {   const string estadoVenta = "CONFIRMADO";
 
-            Venta venta = new Venta();
 
-            venta.Cli_Dni = Convert.ToString(cmbCliente.SelectedValue);
-            venta.Veh_Matricula = Convert.ToString(cmbVehiculo.SelectedValue);
-            venta.Vta_FormaPago = Convert.ToString(cmbFormaPago.SelectedValue);
-            venta.Vta_Fecha = dtFecha.Value;
-            venta.Vta_PrecioFinal = Convert.ToDecimal(txtPrecioFinal.Text);
-            venta.Usu_Id = UsuarioLogin.usu_Id;
-            venta.Vta_Estado = estadoVenta;
+        if (cmbVehiculo.SelectedValue == null || cmbFormaPago.SelectedValue == null || cmbCliente.SelectedValue == null || cmbCliente.SelectedValue == null)
+            {
 
-            TrabajarVenta.insertar_venta(venta);
+                MessageBox.Show("Complete todos los campos");
+            }
+            else {
+                Venta venta = new Venta();
+
+                venta.Cli_Dni = Convert.ToString(cmbCliente.SelectedValue);
+                venta.Veh_Matricula = Convert.ToString(cmbVehiculo.SelectedValue);
+                venta.Vta_FormaPago = Convert.ToString(cmbFormaPago.SelectedValue);
+                venta.Vta_Fecha = dtFecha.Value;
+                venta.Vta_PrecioFinal = Convert.ToDecimal(txtPrecioFinal.Text);
+                venta.Usu_Id = UsuarioLogin.usu_Id;
+                venta.Vta_Estado = estadoVenta;
+                TrabajarVenta.insertar_venta(venta);
+            
+            }
         }
 
         private void cmbVehiculo_SelectedIndexChanged(object sender, EventArgs e)

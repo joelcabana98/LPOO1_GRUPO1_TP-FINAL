@@ -30,7 +30,6 @@
         {
             this.txtColor = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtModelo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblContraseña = new System.Windows.Forms.Label();
@@ -39,13 +38,11 @@
             this.rbtnGps = new System.Windows.Forms.GroupBox();
             this.rbtnNo = new System.Windows.Forms.RadioButton();
             this.rbtnSi = new System.Windows.Forms.RadioButton();
-            this.txtPrecio = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtPuertas = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -54,8 +51,14 @@
             this.cmbLinea = new System.Windows.Forms.ComboBox();
             this.cmbTipoVehiculo = new System.Windows.Forms.ComboBox();
             this.cmbClaseVehiculo = new System.Windows.Forms.ComboBox();
+            this.txtModelo = new System.Windows.Forms.NumericUpDown();
+            this.txtPuertas = new System.Windows.Forms.NumericUpDown();
+            this.txtPrecio = new System.Windows.Forms.NumericUpDown();
             this.rbtnGps.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtModelo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPuertas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrecio)).BeginInit();
             this.SuspendLayout();
             // 
             // txtColor
@@ -81,19 +84,6 @@
             this.label4.Size = new System.Drawing.Size(51, 21);
             this.label4.TabIndex = 36;
             this.label4.Text = "Color";
-            // 
-            // txtModelo
-            // 
-            this.txtModelo.BackColor = System.Drawing.Color.White;
-            this.txtModelo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtModelo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtModelo.ForeColor = System.Drawing.Color.Black;
-            this.txtModelo.Location = new System.Drawing.Point(30, 254);
-            this.txtModelo.Name = "txtModelo";
-            this.txtModelo.Size = new System.Drawing.Size(283, 27);
-            this.txtModelo.TabIndex = 35;
-            this.txtModelo.TextChanged += new System.EventHandler(this.txtModelo_TextChanged);
-            this.txtModelo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtModelo_KeyPress);
             // 
             // label1
             // 
@@ -191,19 +181,6 @@
             this.rbtnSi.Text = "Si";
             this.rbtnSi.UseVisualStyleBackColor = false;
             // 
-            // txtPrecio
-            // 
-            this.txtPrecio.BackColor = System.Drawing.Color.White;
-            this.txtPrecio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPrecio.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecio.ForeColor = System.Drawing.Color.Black;
-            this.txtPrecio.Location = new System.Drawing.Point(355, 313);
-            this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(283, 27);
-            this.txtPrecio.TabIndex = 47;
-            this.txtPrecio.TextChanged += new System.EventHandler(this.txtPrecio_TextChanged);
-            this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -259,18 +236,6 @@
             this.label5.TabIndex = 39;
             this.label5.Text = "Puertas";
             // 
-            // txtPuertas
-            // 
-            this.txtPuertas.BackColor = System.Drawing.Color.White;
-            this.txtPuertas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPuertas.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPuertas.ForeColor = System.Drawing.Color.Black;
-            this.txtPuertas.Location = new System.Drawing.Point(355, 76);
-            this.txtPuertas.Name = "txtPuertas";
-            this.txtPuertas.Size = new System.Drawing.Size(283, 27);
-            this.txtPuertas.TabIndex = 40;
-            this.txtPuertas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPuertas_KeyPress);
-            // 
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
@@ -325,6 +290,7 @@
             // 
             // cmbMarca
             // 
+            this.cmbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMarca.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMarca.FormattingEnabled = true;
             this.cmbMarca.Location = new System.Drawing.Point(30, 135);
@@ -335,6 +301,7 @@
             // 
             // cmbLinea
             // 
+            this.cmbLinea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLinea.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbLinea.FormattingEnabled = true;
             this.cmbLinea.Location = new System.Drawing.Point(32, 193);
@@ -344,6 +311,7 @@
             // 
             // cmbTipoVehiculo
             // 
+            this.cmbTipoVehiculo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoVehiculo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTipoVehiculo.FormattingEnabled = true;
             this.cmbTipoVehiculo.Location = new System.Drawing.Point(355, 193);
@@ -353,6 +321,7 @@
             // 
             // cmbClaseVehiculo
             // 
+            this.cmbClaseVehiculo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbClaseVehiculo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbClaseVehiculo.FormattingEnabled = true;
             this.cmbClaseVehiculo.Location = new System.Drawing.Point(355, 253);
@@ -360,12 +329,54 @@
             this.cmbClaseVehiculo.Size = new System.Drawing.Size(283, 28);
             this.cmbClaseVehiculo.TabIndex = 55;
             // 
+            // txtModelo
+            // 
+            this.txtModelo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtModelo.Location = new System.Drawing.Point(30, 255);
+            this.txtModelo.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
+            this.txtModelo.Name = "txtModelo";
+            this.txtModelo.Size = new System.Drawing.Size(283, 26);
+            this.txtModelo.TabIndex = 56;
+            // 
+            // txtPuertas
+            // 
+            this.txtPuertas.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPuertas.Location = new System.Drawing.Point(355, 75);
+            this.txtPuertas.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.txtPuertas.Name = "txtPuertas";
+            this.txtPuertas.Size = new System.Drawing.Size(283, 26);
+            this.txtPuertas.TabIndex = 57;
+            // 
+            // txtPrecio
+            // 
+            this.txtPrecio.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecio.Location = new System.Drawing.Point(353, 311);
+            this.txtPrecio.Maximum = new decimal(new int[] {
+            1215752192,
+            23,
+            0,
+            0});
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(283, 26);
+            this.txtPrecio.TabIndex = 58;
+            // 
             // FormModalAgregarVehiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(669, 424);
+            this.Controls.Add(this.txtPrecio);
+            this.Controls.Add(this.txtPuertas);
+            this.Controls.Add(this.txtModelo);
             this.Controls.Add(this.cmbClaseVehiculo);
             this.Controls.Add(this.cmbTipoVehiculo);
             this.Controls.Add(this.cmbLinea);
@@ -374,16 +385,13 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.rbtnGps);
-            this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtPuertas);
             this.Controls.Add(this.txtColor);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtModelo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblContraseña);
@@ -398,6 +406,9 @@
             this.rbtnGps.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtModelo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPuertas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrecio)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -407,7 +418,6 @@
 
         private System.Windows.Forms.TextBox txtColor;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtModelo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblContraseña;
@@ -416,13 +426,11 @@
         private System.Windows.Forms.GroupBox rbtnGps;
         private System.Windows.Forms.RadioButton rbtnNo;
         private System.Windows.Forms.RadioButton rbtnSi;
-        private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtPuertas;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Panel panel1;
@@ -431,5 +439,8 @@
         private System.Windows.Forms.ComboBox cmbLinea;
         private System.Windows.Forms.ComboBox cmbTipoVehiculo;
         private System.Windows.Forms.ComboBox cmbClaseVehiculo;
+        private System.Windows.Forms.NumericUpDown txtModelo;
+        private System.Windows.Forms.NumericUpDown txtPuertas;
+        private System.Windows.Forms.NumericUpDown txtPrecio;
     }
 }

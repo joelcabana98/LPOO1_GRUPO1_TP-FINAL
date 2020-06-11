@@ -24,49 +24,70 @@ namespace Vistas
 
         }
 
-        private void deshabilitarBotones()
-        {
-            btnModificar.Enabled = false;
-            btnEiminar.Enabled = false;
-            btnAgregarVehiculo.Enabled = true;
-        }
-
-        private void habilitarBotones()
-        {
-            btnModificar.Enabled = true;
-            btnEiminar.Enabled = true;
-            btnAgregarVehiculo.Enabled = false;
-        }
         private void btnAgregarVehiculo_Click(object sender, EventArgs e)
         {
-            string descripcion = txtDescripcion.Text;
-            TrabajarVenta.insertar_forma_pago(descripcion);
-            cargarTabla();
-            txtDescripcion.Text = null;
+            if (txtDescripcion.Text == null || txtDescripcion.Text == null)
+            {
+                string descripcion = txtDescripcion.Text;
+                TrabajarVenta.insertar_forma_pago(descripcion);
+                cargarTabla();
+                txtDescripcion.Text = null;
+
+            }
+            else {
+                MessageBox.Show("No puede haber campos vacios");
+            }
+            
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            string descripcion = txtDescripcion.Text;
-            int id = Convert.ToInt32(dgvFormaPago.CurrentRow.Cells["Id"].Value);
-            TrabajarVenta.actualizar_forma_pago(id,descripcion);
-            txtDescripcion.Text = null;
-            deshabilitarBotones();
-            cargarTabla();
+           
+
+            if (txtDescripcion.Text == null || txtDescripcion.Text == "")
+            {
+                MessageBox.Show("No puede haber campos vacios");
+            }
+            else
+            {
+
+                var confirmResult = MessageBox.Show("¿Seguro que quieres Modificar?",
+                                     "¿Modificar?",
+                                     MessageBoxButtons.YesNo);
+                if (confirmResult == DialogResult.Yes)
+                {
+                    string descripcion = txtDescripcion.Text;
+                    int id = Convert.ToInt32(dgvFormaPago.CurrentRow.Cells["Id"].Value);
+                    TrabajarVenta.actualizar_forma_pago(id, descripcion);
+                    txtDescripcion.Text = null;
+                    cargarTabla();
+
+                }
+
+            }
         }
 
         private void dgvFormaPago_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtDescripcion.Text = Convert.ToString(dgvFormaPago.CurrentRow.Cells["Descripcion"].Value);
-            habilitarBotones();
         }
 
         private void btnEiminar_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(dgvFormaPago.CurrentRow.Cells["Id"].Value);
-            TrabajarVenta.eliminar_forma_pago(id);
-            txtDescripcion.Text = null;
-            cargarTabla();
+
+            var confirmResult = MessageBox.Show("¿Seguro que quieres eliminar?",
+                                    "¿Eliminar?",
+                                    MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+                int id = Convert.ToInt32(dgvFormaPago.CurrentRow.Cells["Id"].Value);
+                TrabajarVenta.eliminar_forma_pago(id);
+                txtDescripcion.Text = null;
+                cargarTabla();
+            }
+
+
+           
         }
 
 

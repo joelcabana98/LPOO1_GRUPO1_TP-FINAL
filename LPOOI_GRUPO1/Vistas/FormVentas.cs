@@ -28,6 +28,8 @@ namespace Vistas
             cargar_combo_estado_venta();
 
 
+
+            dtDesde.Value = dtHasta.Value;
             dtDesde.Value = dtDesde.Value.AddDays(-7);
         }
         private void cargar_Combo_ClientesSP() {
@@ -100,6 +102,7 @@ namespace Vistas
         }
 
         private void filtroDinamico() {
+            Console.Write("hasta: " + dtHasta.Value);
             string dni = Convert.ToString(cmbCliente.SelectedValue);
             DateTime desde = dtDesde.Value;
             DateTime hasta = dtHasta.Value;

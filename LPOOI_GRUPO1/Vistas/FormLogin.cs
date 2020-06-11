@@ -22,7 +22,7 @@ namespace Vistas
         private void btnIngresar_Click(object sender, EventArgs e)
         {
 
-            if (TrabajarUsuario.validarUsuario(txtUsuario.Text, txtPassword.Text) == true)
+            if (TrabajarUsuario.validarUsuario(txtUsuario.Text, Util.GetSHA256(txtPassword.Text)) == true)
             {
                 FormPrincipal frPrincipal = new FormPrincipal();
                 frPrincipal.Show();

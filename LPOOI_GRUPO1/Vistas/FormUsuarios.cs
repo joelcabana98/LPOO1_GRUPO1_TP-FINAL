@@ -50,7 +50,8 @@ namespace Vistas
                                      "¿Eliminar?",
                                      MessageBoxButtons.YesNo);
             if (confirmResult == DialogResult.Yes)
-            { 
+            {
+                usuario.Usu_Estado = Util.estado.INACTIVO.ToString();
                 TrabajarUsuario.eliminar_usuario(usuario);
                 cargar_usuarios();
  

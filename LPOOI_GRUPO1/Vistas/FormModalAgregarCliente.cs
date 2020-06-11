@@ -41,6 +41,7 @@ namespace Vistas
                 cliente.Cli_Apellido = txtApellidoCliente.Text;
                 cliente.Cli_Direccion = txtDireccionCliente.Text;
                 cliente.Cli_Telefono = txtTelefonoCliente.Text;
+                cliente.Cli_Estado = Util.estado.ACTIVO.ToString();
                 TrabajarCliente.insertar_cliente(cliente);
             }
             else {

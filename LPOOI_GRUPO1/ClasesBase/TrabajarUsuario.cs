@@ -25,9 +25,11 @@ namespace ClasesBase
             cmd.CommandText += " usu_apellidoNombre as 'Nombre y Apellido', ";
             cmd.CommandText += " usu_id , U.rol_codigo  ";
             cmd.CommandText += " FROM Usuario as U";
-            cmd.CommandText += " LEFT JOIN Rol as R ON (R.rol_codigo=U.rol_codigo)";
+            cmd.CommandText += " LEFT JOIN Rol as R ON (R.rol_codigo=U.rol_codigo) WHERE usu_estado=@estado";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
+
+            cmd.Parameters.AddWithValue("@estado",Util.estado.ACTIVO.ToString());
 
             // Ejecuta la consulta
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -70,7 +72,7 @@ namespace ClasesBase
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.AgenciaConection);
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "INSERT INTO Usuario(usu_nombreUsuario,usu_contrasena,usu_apellidoNombre,rol_codigo) values(@usu,@contrasena,@nombre,@rol)";
+            cmd.CommandText = "INSERT INTO Usuario(usu_nombreUsuario,usu_contrasena,usu_apellidoNombre,rol_codigo,usu_estado) values(@usu,@contrasena,@nombre,@rol,@estado)";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
 
@@ -78,6 +80,7 @@ namespace ClasesBase
             cmd.Parameters.AddWithValue("@contrasena", usuario.Usu_Password);
             cmd.Parameters.AddWithValue("@nombre", usuario.Usu_ApellidoNombre);
             cmd.Parameters.AddWithValue("@rol", usuario.Rol_Codigo);
+            cmd.Parameters.AddWithValue("@estado", usuario.Usu_Estado);
 
             cnn.Open();
             cmd.ExecuteNonQuery();
@@ -93,11 +96,12 @@ namespace ClasesBase
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.AgenciaConection);
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "DELETE FROM Usuario WHERE usu_id=@id";
+            cmd.CommandText = "UPDATE Usuario set usu_estado=@estado WHERE usu_id=@id";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
 
             cmd.Parameters.AddWithValue("@id", usuario.Usu_Id);
+            cmd.Parameters.AddWithValue("@estado",usuario.Usu_Estado);
 
             cnn.Open();
             cmd.ExecuteNonQuery();
@@ -144,11 +148,12 @@ namespace ClasesBase
             cmd.CommandText += " usu_id , U.rol_codigo  ";
             cmd.CommandText += " FROM Usuario as U";
             cmd.CommandText += " LEFT JOIN Rol as R ON (R.rol_codigo=U.rol_codigo)";
-            cmd.CommandText += " WHERE usu_nombreUsuario LIKE @pattern ";
+            cmd.CommandText += " WHERE usu_nombreUsuario LIKE @pattern AND usu_estado=@estado ";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
 
             cmd.Parameters.AddWithValue("@pattern", "%"+sPattern+"%");
+            cmd.Parameters.AddWithValue("@estado",Util.estado.ACTIVO.ToString());
             // Ejecuta la consulta
             SqlDataAdapter da = new SqlDataAdapter(cmd);
 
@@ -160,7 +165,7 @@ namespace ClasesBase
         }
 
         /// <summary>
-        /// Valida si rl usuario existe por NOMBRE DE USUARIO Y PASSWORD
+        /// Valida si el usuario existe por NOMBRE DE USUARIO Y PASSWORD
         /// </summary>
         /// <param name="usuario"></param>
         /// <param name="contra"></param>
@@ -169,9 +174,10 @@ namespace ClasesBase
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.AgenciaConection);
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SELECT *FROM Usuario WHERE usu_nombreUsuario=@usu AND usu_contrasena=@contra";
+            cmd.CommandText = "SELECT *FROM Usuario WHERE usu_nombreUsuario=@usu AND usu_contrasena=@contra AND usu_estado=@estado";
             cmd.Parameters.AddWithValue("@usu", usuario);
             cmd.Parameters.AddWithValue("@contra",contra);
+            cmd.Parameters.AddWithValue("@estado",Util.estado.ACTIVO.ToString());
            
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;

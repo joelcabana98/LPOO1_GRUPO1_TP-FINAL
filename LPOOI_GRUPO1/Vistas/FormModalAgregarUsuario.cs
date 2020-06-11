@@ -29,6 +29,7 @@ namespace Vistas
             cmbRol.DisplayMember = "rol_descripcion";
             cmbRol.ValueMember = "rol_codigo";
             cmbRol.DataSource = TrabajarUsuario.listar_roles();
+            cmbRol.SelectedIndex = -1;
         
         }
 
@@ -44,17 +45,44 @@ namespace Vistas
         /// <param name="e"></param>
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Usuario usuario = new Usuario();
+            
+     
 
-            usuario.Usu_NombreUsuario = txtUsuario.Text;
-            usuario.Usu_ApellidoNombre = txtApellidoNombre.Text;
-            usuario.Usu_Password = txtContrasena.Text;
-            usuario.Rol_Codigo = Convert.ToString(cmbRol.SelectedValue);
+            if (ValidarTextBox() == true)
+            {
+                Usuario usuario = new Usuario();
 
-            TrabajarUsuario.insertar_usuario(usuario);
+                usuario.Usu_NombreUsuario = txtUsuario.Text;
+                usuario.Usu_ApellidoNombre = txtApellidoNombre.Text;
+                usuario.Usu_Password = Util.GetSHA256(txtContrasena.Text);
+                usuario.Rol_Codigo = Convert.ToString(cmbRol.SelectedValue);
+                usuario.Usu_Estado = Util.estado.ACTIVO.ToString();
 
-            MessageBox.Show("se agrego");
-       
+                TrabajarUsuario.insertar_usuario(usuario);
+
+
+                MessageBox.Show("Usuario Agregado!");
+            }
+            else
+            {
+                MessageBox.Show("Complete todo los campos");
+            }
+
+        }
+
+
+        private bool ValidarTextBox()
+        {
+            bool b = true;
+            foreach (Control c in this.Controls)
+            {
+                if (c is TextBox & c.Text == String.Empty)
+                {
+                    b = false;
+                }
+            }
+
+            return b;
         }
 
 

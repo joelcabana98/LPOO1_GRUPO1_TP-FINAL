@@ -52,6 +52,7 @@ namespace Vistas
             Cliente cliente = new Cliente();
             //toma el id del usuario seleccionado de la tabla
             cliente.Cli_Dni = Convert.ToString(dgwClientes.CurrentRow.Cells["DNI"].Value);
+            cliente.Cli_Estado = Util.estado.INACTIVO.ToString();
             var confirmResult = MessageBox.Show("¿Seguro que quieres eliminar?",
                                      "¿Eliminar?",
                                      MessageBoxButtons.YesNo);

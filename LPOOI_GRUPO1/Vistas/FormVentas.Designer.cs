@@ -135,7 +135,7 @@
             this.dtHasta.Name = "dtHasta";
             this.dtHasta.Size = new System.Drawing.Size(123, 26);
             this.dtHasta.TabIndex = 52;
-            this.dtHasta.Value = new System.DateTime(2020, 6, 2, 23, 59, 0, 0);
+            this.dtHasta.Value = new System.DateTime(2020, 6, 11, 23, 59, 0, 0);
             this.dtHasta.ValueChanged += new System.EventHandler(this.dtHasta_ValueChanged);
             // 
             // dtDesde

@@ -26,7 +26,7 @@ namespace ClasesBase
             cmd.CommandText += " cli_apellido as 'Apellido',";
             cmd.CommandText += " cli_direccion as 'Direccion', ";
             cmd.CommandText += " cli_telefono as 'Telefono'  ";
-            cmd.CommandText += " FROM Cliente";
+            cmd.CommandText += " FROM Cliente WHERE cli_estado='ACTIVO'";
             
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
@@ -51,7 +51,7 @@ namespace ClasesBase
 
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = "SELECT * FROM Cliente";
+            cmd.CommandText = "SELECT * FROM Cliente WHERE cli_estado='ACTIVO'";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
 
@@ -78,7 +78,7 @@ namespace ClasesBase
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.AgenciaConection);
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "INSERT INTO Cliente (cli_dni,cli_nombre,cli_apellido,cli_direccion,cli_telefono) values(@dni,@nombre,@apellido,@dir,@tel)";
+            cmd.CommandText = "INSERT INTO Cliente (cli_dni,cli_nombre,cli_apellido,cli_direccion,cli_telefono,cli_estado) values(@dni,@nombre,@apellido,@dir,@tel,@estado)";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
 
@@ -87,6 +87,8 @@ namespace ClasesBase
             cmd.Parameters.AddWithValue("@apellido", cliente.Cli_Apellido);
             cmd.Parameters.AddWithValue("@dir", cliente.Cli_Direccion);
             cmd.Parameters.AddWithValue("@tel", cliente.Cli_Telefono);
+            cmd.Parameters.AddWithValue("@estado", cliente.Cli_Estado);
+
 
             cnn.Open();
             cmd.ExecuteNonQuery();
@@ -102,11 +104,12 @@ namespace ClasesBase
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.AgenciaConection);
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "DELETE FROM Cliente WHERE cli_dni=@dni";
+            cmd.CommandText = "UPDATE Cliente set cli_estado=@estado WHERE cli_dni=@dni";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
 
             cmd.Parameters.AddWithValue("@dni", cliente.Cli_Dni);
+            cmd.Parameters.AddWithValue("@estado", cliente.Cli_Estado);
 
             cnn.Open();
             cmd.ExecuteNonQuery();
@@ -156,11 +159,12 @@ namespace ClasesBase
             cmd.CommandText += " cli_direccion as 'Direccion', ";
             cmd.CommandText += " cli_telefono as 'Telefono'  ";
             cmd.CommandText += " FROM Cliente";
-            cmd.CommandText += " WHERE (cli_dni LIKE @pattern) OR (cli_apellido LIKE @pattern) ";
+            cmd.CommandText += " WHERE (cli_dni LIKE @pattern) OR (cli_apellido LIKE @pattern) AND cli_estado=@estado";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
 
             cmd.Parameters.AddWithValue("@pattern", "%" + sPattern + "%");
+            cmd.Parameters.AddWithValue("@estado",Util.estado.ACTIVO.ToString());
             // Ejecuta la consulta
             SqlDataAdapter da = new SqlDataAdapter(cmd);
 

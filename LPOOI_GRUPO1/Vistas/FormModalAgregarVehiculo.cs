@@ -71,6 +71,7 @@ namespace Vistas
             cmbMarca.DisplayMember = "mar_nombre";
             cmbMarca.ValueMember = "mar_id";
             cmbMarca.DataSource = TrabajarVehiculo.listar_marca();
+            cmbMarca.SelectedIndex = -1;
         }
 
         private void cargar_combo_linea(int id_marca)
@@ -78,11 +79,13 @@ namespace Vistas
             cmbLinea.DisplayMember = "lin_nombre";
             cmbLinea.ValueMember = "lin_id";
             cmbLinea.DataSource = TrabajarVehiculo.listar_linea(id_marca);
+            cmbLinea.SelectedIndex = -1;
         }
         private void cargar_combo_Tipo_Vehiculo() {
             cmbTipoVehiculo.DisplayMember = "Descripcion";
             cmbTipoVehiculo.ValueMember = "Id";
             cmbTipoVehiculo.DataSource = TrabajarVehiculo.listar_tipo_vehiculo();
+            cmbTipoVehiculo.SelectedIndex = -1;
         }
 
 
@@ -91,6 +94,7 @@ namespace Vistas
             cmbClaseVehiculo.DisplayMember = "Descripcion";
             cmbClaseVehiculo.ValueMember = "Id";
             cmbClaseVehiculo.DataSource = TrabajarVehiculo.listar_clase_vehiculo();
+            cmbClaseVehiculo.SelectedIndex = -1;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -105,37 +109,51 @@ namespace Vistas
         /// <param name="e"></param>
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            var confirmResult = MessageBox.Show("¿Seguro que quieres guardar?",
-                                   "¿Guardar?",
-                                   MessageBoxButtons.YesNo);
 
-            if (confirmResult == DialogResult.Yes)
+            if (cmbClaseVehiculo.SelectedValue == null || cmbLinea.SelectedValue == null || cmbMarca.SelectedValue == null || cmbTipoVehiculo.SelectedValue == null || txtMatricula == null)
             {
-                Vehiculo vehiculo = new Vehiculo();
-                vehiculo.Veh_Matricula = txtMatricula.Text;
-                vehiculo.Veh_Marca = Convert.ToString(cmbMarca.SelectedValue);
-                vehiculo.Veh_Linea = Convert.ToString(cmbLinea.SelectedValue);
-                vehiculo.Veh_Modelo = txtModelo.Text;
-                vehiculo.Veh_Color = txtColor.Text;
-                vehiculo.Veh_Puertas = Convert.ToInt32(txtPuertas.Text);
 
-                if (rbtnSi.Checked == true)
-                {
-                    vehiculo.Veh_Gps = true;
-                }
-                else
-                {
-                    if (rbtnNo.Checked == true)
-                    {
-                        vehiculo.Veh_Gps= false;
-                    }
-                }
-                vehiculo.Veh_TipoVehiculo = Convert.ToString(cmbTipoVehiculo.SelectedValue);
-                vehiculo.Veh_ClaseVehiulo = Convert.ToString(cmbClaseVehiculo.SelectedValue);
-                vehiculo.Veh_Precio = Convert.ToDecimal(txtPrecio.Text);
+                MessageBox.Show("Complete todos los campos");
 
-                TrabajarVehiculo.insertar_vehiculo(vehiculo);
+
             }
+            else {
+                var confirmResult = MessageBox.Show("¿Seguro que quieres guardar?",
+                                       "¿Guardar?",
+                                       MessageBoxButtons.YesNo);
+
+                if (confirmResult == DialogResult.Yes)
+                {
+                    Vehiculo vehiculo = new Vehiculo();
+                    vehiculo.Veh_Matricula = txtMatricula.Text;
+                    vehiculo.Veh_Marca = Convert.ToString(cmbMarca.SelectedValue);
+                    vehiculo.Veh_Linea = Convert.ToString(cmbLinea.SelectedValue);
+                    vehiculo.Veh_Modelo = txtModelo.Text;
+                    vehiculo.Veh_Color = txtColor.Text;
+                    vehiculo.Veh_Puertas = Convert.ToInt32(txtPuertas.Text);
+
+                    if (rbtnSi.Checked == true)
+                    {
+                        vehiculo.Veh_Gps = true;
+                    }
+                    else
+                    {
+                        if (rbtnNo.Checked == true)
+                        {
+                            vehiculo.Veh_Gps = false;
+                        }
+                    }
+                    vehiculo.Veh_TipoVehiculo = Convert.ToString(cmbTipoVehiculo.SelectedValue);
+                    vehiculo.Veh_ClaseVehiulo = Convert.ToString(cmbClaseVehiculo.SelectedValue);
+                    vehiculo.Veh_Precio = Convert.ToDecimal(txtPrecio.Text);
+                    vehiculo.Veh_Estado = Util.estado.ACTIVO.ToString();
+
+                    TrabajarVehiculo.insertar_vehiculo(vehiculo);
+                }
+            
+            }
+
+            
         }
 
  

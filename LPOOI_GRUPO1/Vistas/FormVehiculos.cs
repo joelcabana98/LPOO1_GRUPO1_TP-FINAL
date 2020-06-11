@@ -58,7 +58,9 @@ namespace Vistas
                                      "¿Eliminar?",
                                      MessageBoxButtons.YesNo);
             if (confirmResult == DialogResult.Yes)
+
             {
+                vehiculo.Veh_Estado = Util.estado.INACTIVO.ToString();
                 TrabajarVehiculo.eliminar_Vehiculo(vehiculo);
                 cargar_vehiculos();
 

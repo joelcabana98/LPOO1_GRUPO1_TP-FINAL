@@ -17,6 +17,7 @@ namespace ClasesBase
         private string veh_TipoVehiculo;
         private string veh_ClaseVehiulo;
         private decimal veh_Precio;
+        private string veh_Estado;
 
         public Vehiculo() { }
 
@@ -70,6 +71,12 @@ namespace ClasesBase
         {
             get { return veh_Precio; }
             set { veh_Precio = value; }
+        }
+
+        public string Veh_Estado
+        {
+            get { return veh_Estado; }
+            set { veh_Estado = value; }
         }
 
         public override string ToString()

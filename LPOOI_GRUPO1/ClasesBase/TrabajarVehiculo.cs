@@ -161,6 +161,7 @@ namespace ClasesBase
             cmd.Parameters.AddWithValue("@tipo", vehiculo.Veh_TipoVehiculo);
             cmd.Parameters.AddWithValue("@clase", vehiculo.Veh_ClaseVehiulo);
             cmd.Parameters.AddWithValue("@precio", vehiculo.Veh_Precio);
+            cmd.Parameters.AddWithValue("@estado", vehiculo.Veh_Estado);
             
             cnn.Open();
             cmd.ExecuteNonQuery();
@@ -185,6 +186,7 @@ namespace ClasesBase
             cmd.Connection = cnn;
 
             cmd.Parameters.AddWithValue("@matricula", vehiculo.Veh_Matricula);
+            cmd.Parameters.AddWithValue("@estado", vehiculo.Veh_Estado);
 
             cnn.Open();
             cmd.ExecuteNonQuery();

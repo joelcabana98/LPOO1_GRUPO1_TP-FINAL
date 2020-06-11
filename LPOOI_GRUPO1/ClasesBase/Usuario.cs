@@ -12,6 +12,7 @@ namespace ClasesBase
         private string usu_Password;
         private string usu_ApellidoNombre;
         private string rol_Codigo;
+        private string usu_Estado;
 
         public Usuario() { }
        
@@ -41,5 +42,16 @@ namespace ClasesBase
             get { return rol_Codigo; }
             set { rol_Codigo = value; }
         }
+
+        public string Usu_Estado
+        {
+            get { return usu_Estado; }
+            set { usu_Estado = value; }
+        }
+
+
+
+
+
     }
 }

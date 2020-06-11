@@ -12,6 +12,7 @@ namespace ClasesBase
         private string cli_Apellido;
         private string cli_Direccion;
         private string cli_Telefono;
+        private string cli_Estado;
 
 
         public Cliente() { }
@@ -41,6 +42,12 @@ namespace ClasesBase
         {
             get { return cli_Telefono; }
             set { cli_Telefono = value; }
+        }
+
+        public string Cli_Estado
+        {
+            get { return cli_Estado; }
+            set { cli_Estado = value; }
         }
 
         public override string ToString()

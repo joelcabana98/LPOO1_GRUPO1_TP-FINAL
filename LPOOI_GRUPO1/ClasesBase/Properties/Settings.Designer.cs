@@ -26,9 +26,10 @@ namespace ClasesBase.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;AttachDbFilename=\"C:\\Users\\Joel\\Desktop\\Nueva carpeta (2" +
-            ")\\LPOOI_GRUPO1\\Base De Datos\\agencia.mdf\";Integrated Security=True;Connect Timeo" +
-            "ut=30;User Instance=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;AttachDbFilename=\"R:\\FACULTAD\\1_2020\\Laboratorio de Prog" +
+            "ramacion Orientada a Objetos\\Trabajo Final LPOO1\\LPOO1_GRUPO1_TP-FINAL\\LPOOI_GRU" +
+            "PO1\\Base De Datos\\agencia.mdf\";Integrated Security=True;Connect Timeout=30;User " +
+            "Instance=True")]
         public string AgenciaConection {
             get {
                 return ((string)(this["AgenciaConection"]));

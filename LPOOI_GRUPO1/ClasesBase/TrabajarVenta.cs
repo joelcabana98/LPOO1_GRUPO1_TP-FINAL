@@ -86,7 +86,7 @@ namespace ClasesBase
             // Llena los datos de la consulta en el DataTable
             DataTable dt = new DataTable();
             da.Fill(dt);
-
+            Console.WriteLine("resultado : "+ dt);
             return dt;
         }
 
