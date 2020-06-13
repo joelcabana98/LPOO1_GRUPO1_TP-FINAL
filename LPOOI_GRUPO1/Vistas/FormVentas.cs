@@ -82,12 +82,28 @@ namespace Vistas
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnAnularVenta.Enabled = true;
+            string estado = Convert.ToString(dataGridView1.CurrentRow.Cells["Estado"].Value);
+            if (estado == "CONFIRMADO")
+            {
+                btnAnularVenta.Enabled = true;
+            }
+            else if(estado=="ANULADA")
+            {
+                btnAnularVenta.Enabled = false;
+            }
         }
 
         private void btnAnularVenta_Click(object sender, EventArgs e)
-        {   
-            
+        {
+            int ventaId = Convert.ToInt32(dataGridView1.CurrentRow.Cells["ID Venta"].Value);
+            if (MessageBox.Show("¿Desea ANULAR la Venta ID: "+ventaId+"?", "Anular venta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                //Anular venta
+                TrabajarVenta.modificar_estado_venta(ventaId, "ANULADA");
+                MessageBox.Show("Venta ANULADA","Mensaje");
+                //Se actualiza la tabla
+                filtroDinamico(); 
+            }
         }
 
         private void dtDesde_ValueChanged(object sender, EventArgs e)

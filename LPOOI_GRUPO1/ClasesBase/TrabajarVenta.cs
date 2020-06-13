@@ -174,7 +174,22 @@ namespace ClasesBase
 
         }
 
+        public static void modificar_estado_venta(int id, string estado)
+        {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.AgenciaConection);
 
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "UPDATE Venta set vta_estado=@estadoVenta WHERE vta_id=@id";
+
+            cmd.Parameters.AddWithValue("@estadoVenta", estado);
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            cnn.Open();
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+        }
         
 
     }
