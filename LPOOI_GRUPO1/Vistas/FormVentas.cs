@@ -126,6 +126,14 @@ namespace Vistas
             string estado = Convert.ToString(cbxEstadoVenta.SelectedValue);
 
             dataGridView1.DataSource = TrabajarVenta.filtrar_ventas_Dinamica(dni, idMarca, desde, hasta,estado); 
+            
+            //Cargar contadores
+            DataTable dt = TrabajarVenta.obtener_total_cantidad_ventas_dinamica(dni, idMarca, desde, hasta);
+            lblCantVentas.Text = Convert.ToString(dt.Rows[0].Field<int>("cant"));
+            lblTotalVenta.Text = "$ " + Convert.ToString(dt.Rows[0][0]);
+            //lblCantVentas.Text = "$ " + dt.Rows[0].Field<Decimal>("total").ToString();
+            lblVentasAnuladas.Text = Convert.ToString(dt.Rows[0][2]);
+            lblVentasConfirmadas.Text = Convert.ToString(dt.Rows[0][3]);
         }
 
         private void cargar_combo_estado_venta() {
@@ -133,7 +141,7 @@ namespace Vistas
             cbxEstadoVenta.ValueMember = "Value";
             var items = new[] {
                 new { Text = "CONFIRMADO", Value = "CONFIRMADO" },
-                new { Text = "ANULADO", Value = "ANULADO" }
+                new { Text = "ANULADA", Value = "ANULADA" }
             };
 
             cbxEstadoVenta.DataSource = items;

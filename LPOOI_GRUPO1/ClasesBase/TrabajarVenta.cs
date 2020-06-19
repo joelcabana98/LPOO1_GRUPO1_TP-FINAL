@@ -6,6 +6,7 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 
+
 namespace ClasesBase
 {
     public class TrabajarVenta
@@ -86,7 +87,7 @@ namespace ClasesBase
             // Llena los datos de la consulta en el DataTable
             DataTable dt = new DataTable();
             da.Fill(dt);
-            Console.WriteLine("resultado : "+ dt);
+            //Console.WriteLine("resultado : "+ dt.Rows[1].Field<int>(0));
             return dt;
         }
 
@@ -191,6 +192,95 @@ namespace ClasesBase
             cnn.Close();
         }
         
+        ////// METODOS PARA MOSTRAR LAS CANTIDADES DE VENTAS
+
+        /// <summary>
+        /// Obtiene la cantidad de ventas
+        /// </summary>
+        /// <returns></returns>
+        public static int obtener_cant_ventas() 
+        {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.AgenciaConection);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SELECT COUNT(vta_id) as c";
+            cmd.CommandText += " FROM Venta";
+
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            // Ejecuta la consulta
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            // Llena los datos de la consulta en el DataTable
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            int cantidad = dt.Rows[0].Field<int>(0);
+            return cantidad;
+        }
+
+        /// <summary>
+        /// Obtiene el total de las ventas
+        /// </summary>
+        /// <returns></returns>
+        public static decimal obtener_total_ventas()
+        {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.AgenciaConection);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "ObtenerTotalVentas";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            // Ejecuta la consulta
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            // Llena los datos de la consulta en el DataTable
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            decimal cantidad = dt.Rows[0].Field<decimal>(0);
+            return cantidad;
+        }
+
+        public static DataTable obtener_total_cantidad_ventas_dinamica(string dni, string marca, DateTime desde, DateTime hasta)
+        {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.AgenciaConection);
+
+            SqlCommand cmd = new SqlCommand();
+            /*
+            cmd.CommandText = "ContarSumarVentaDinamica";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+            */
+            cmd.CommandText = "SELECT SUM(Precio) as total, ";
+            cmd.CommandText += "COUNT(*) as cant, ";
+            cmd.CommandText += "SUM(CASE WHEN Estado = 'ANULADA' THEN 1 ELSE 0 END) as anulada, ";
+            cmd.CommandText += "SUM(CASE WHEN Estado = 'CONFIRMADO' THEN 1 ELSE 0 END) as confirmado ";
+            cmd.CommandText += "FROM vw_listar_ventas_clientes ";
+            cmd.CommandText += "WHERE ( DNI=@dni OR @dni='') ";
+            cmd.CommandText += "AND ( Id_Marca=@marca OR @marca = '') ";
+            cmd.CommandText += "AND ( Fecha BETWEEN @desde AND @hasta)";
+
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            cmd.Parameters.AddWithValue("@dni", dni);
+            cmd.Parameters.AddWithValue("@marca", marca);
+            cmd.Parameters.AddWithValue("@desde", desde);
+            cmd.Parameters.AddWithValue("@hasta", hasta);
+
+            // Ejecuta la consulta
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            // Llena los datos de la consulta en el DataTable
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
 
     }
 }
